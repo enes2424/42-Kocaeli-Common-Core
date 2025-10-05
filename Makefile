@@ -19,7 +19,7 @@ $(NAME): $(OBJ) pipex.h
 
 bonus: .bonus
 
-.bonus: $(BOBJ) pipex_bonus.h
+.bonus: $(BOBJ) pipex_bonus.h getnextline/get_next_line.h
 	cc -Wall -Wextra -Werror -o $(NAME) $(BOBJ)
 	@touch .bonus
 
