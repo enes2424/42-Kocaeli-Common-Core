@@ -1,4 +1,4 @@
-# 42-Kocaeli-Libft
+# 42 Kocaeli Libft
 ## Standard C Library Recreation (Standart C Kütüphanesi Yeniden Oluşturma)
 
 Bu proje, 42 Okulu Common Core eğitiminin ilk projesidir. C programlama dilinin standart kütüphanesindeki temel fonksiyonları yeniden implement ederek C dilinin derinliklerini öğrenmeyi ve güçlü bir temel oluşturmayı amaçlar. Ayrıca linked list veri yapısını da içerir.
