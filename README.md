@@ -3,7 +3,7 @@
 
 Bu proje, 42 Common Core'un en zorlu projelerinden biridir. Docker, Docker Compose, NGINX, MariaDB ve WordPress teknolojilerini kullanarak tam işlevli bir web altyapısı oluşturmayı hedefler. Proje, container'lar arası network iletişimi, SSL sertifikaları, veritabanı yönetimi ve web sunucusu konfigürasyonu konularında derin bilgi gerektirir.
 
-## � Servisler
+## 🐳 Servisler
 
 ### MariaDB Service
 **Dosyalar:** `srcs/requirements/mariadb/`
@@ -178,7 +178,7 @@ docker exec -it mariadb bash
 - **Non-Root Users**: Container'larda privilege escalation önleme
 - **Volume Permissions**: Dosya sistem izinleri optimizasyonu
 
-## � Environment Değişkenleri
+## 📋 Environment Değişkenleri
 
 ```bash
 # Domain ve SSL
