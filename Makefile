@@ -22,15 +22,12 @@ NAME = libft.a
 
 all : $(NAME)
 
-$(OBJS): libft.h
-$(BONUS_OBJS): libft.h
-
-$(NAME): $(OBJS)
+$(NAME): libft.h
 		ar rcs $(NAME) $(OBJS)
 
 bonus: .bonus
 
-.bonus: $(BONUS_OBJS)
+.bonus: libft.h
 		ar rcs $(NAME) $(BONUS_OBJS)
 		@touch .bonus
 
