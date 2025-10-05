@@ -1,4 +1,4 @@
-# 42-Kocaeli-Common-Core - ft_printf
+# 42 Kocaeli Printf
 ## Printf Implementation (Printf Implementasyonu)
 
 Bu proje, 42 Okulu Common Core müfredatının bir parçasıdır. C programlama dilinde variadic fonksiyonlar, format specifier'ları, pointer manipülasyonu ve düşük seviyeli I/O işlemlerini öğrenmek için tasarlanmıştır. Standart C kütüphanesindeki `printf` fonksiyonunun kendi implementasyonunu yazmayı hedefler.
