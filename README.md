@@ -7,9 +7,9 @@
 <tr style="display:flex; justify-content:space-around; paddind:0;">
 <td style="padding:0; margin:0;">
 
-| Projec Adı                        | Proje Durumu                              |
+| Proje Adı                         | Proje Durumu                              |
 | :-:                               | :-:                                       |
-| [libft][libft_tree]           | [![libft_badge]][libft_tree]          |
+| [libft][libft_tree]               | [![libft_badge]][libft_tree]              |
 
 </td></tr>
 
