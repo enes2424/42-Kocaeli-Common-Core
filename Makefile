@@ -8,10 +8,8 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) ft_printf.h
 	ar rc $(NAME) $(OBJ)
-
-$(OBJ): ft_printf.h
 
 %.o: %.c
 	cc -Wall -Wextra -Werror -c $< -o $@
