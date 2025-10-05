@@ -10,10 +10,13 @@
 | Proje Adı                         | Proje Durumu                              |
 | :-:                               | :-:                                       |
 | [libft][libft_tree]               | [![libft_badge]][libft_tree]              |
+| [printf][printf_tree]             | [![printf_badge]][printf_tree]            |
 
 </td></tr>
 
 [libft_tree]: https://github.com/enes2424/42-Kocaeli-Common-Core/tree/42-Kocaeli-Libft
 [libft_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20125%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
+[printf_tree]: https://github.com/enes2424/42-Kocaeli-Common-Core/tree/42-Kocaeli-Printf
+[printf_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20100%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
 
 </table>
