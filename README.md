@@ -12,6 +12,7 @@
 | [libft][libft_tree]                 | [![libft_badge]][libft_tree]                 |
 | [printf][printf_tree]               | [![printf_badge]][printf_tree]               |
 | [get_next_line][get_next_line_tree] | [![get_next_line_badge]][get_next_line_tree] |
+| [pipex][pipex_tree]                 | [![pipex_badge]][pipex_tree]                 |
 | [inception][inception_tree]         | [![inception_badge]][inception_tree]         |
 
 </td></tr>
@@ -22,6 +23,8 @@
 [printf_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20100%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
 [get_next_line_tree]: https://github.com/enes2424/42-Kocaeli-Common-Core/tree/42-Kocaeli-Get_Next_Line
 [get_next_line_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20125%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
+[pipex_tree]: https://github.com/enes2424/42-Kocaeli-Common-Core/tree/42-Kocaeli-Pipex
+[pipex_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20125%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
 [inception_tree]: https://github.com/enes2424/42-Kocaeli-Common-Core/tree/42-Kocaeli-Inception
 [inception_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20100%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
 
