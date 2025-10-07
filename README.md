@@ -13,7 +13,7 @@
 | [printf][printf_tree]               | [![printf_badge]][printf_tree]               |
 | [get_next_line][get_next_line_tree] | [![get_next_line_badge]][get_next_line_tree] |
 | [pipex][pipex_tree]                 | [![pipex_badge]][pipex_tree]                 |
-| [cpp][cpp_tree]                     | ![cpp_badge]                                 |
+| [cpp][cpp_tree]                     | [![cpp_badge]][cpp_tree]                     |
 | [inception][inception_tree]         | [![inception_badge]][inception_tree]         |
 
 </td></tr>
