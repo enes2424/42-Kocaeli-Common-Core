@@ -13,6 +13,7 @@
 | [printf][printf_tree]               | [![printf_badge]][printf_tree]               |
 | [get_next_line][get_next_line_tree] | [![get_next_line_badge]][get_next_line_tree] |
 | [pipex][pipex_tree]                 | [![pipex_badge]][pipex_tree]                 |
+| [cpp][cpp_tree]                     | [![cpp_badge]]                               |
 | [inception][inception_tree]         | [![inception_badge]][inception_tree]         |
 
 </td></tr>
@@ -25,7 +26,10 @@
 [get_next_line_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20125%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
 [pipex_tree]: https://github.com/enes2424/42-Kocaeli-Common-Core/tree/42-Kocaeli-Pipex
 [pipex_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20125%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
+[cpp_tree]: https://github.com/enes2424/42-Kocaeli-Cpp-Modules
+[cpp_badge]: https://img.shields.io/badge/MODULES-3498db?style=for-the-badge&logoColor=white
 [inception_tree]: https://github.com/enes2424/42-Kocaeli-Common-Core/tree/42-Kocaeli-Inception
 [inception_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20100%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
 
 </table>
+
