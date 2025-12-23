@@ -6,7 +6,7 @@
 /*   By: eates <eates@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:03:11 by eates             #+#    #+#             */
-/*   Updated: 2025/12/23 18:03:13 by eates            ###   ########.fr       */
+/*   Updated: 2025/12/23 18:54:21 by eates            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,11 @@ static char	*ft_strdup(const char *s1, size_t limit)
 	return (res[i] = '\0', res);
 }
 
-static void	*special_free(char **stash, int create_line)
+static void	*special_free(char **stash, char *buf, int create_line)
 {
 	char	*line;
 
+	free(buf);
 	if (!*stash)
 		return (NULL);
 	if (create_line == 0)
@@ -59,7 +60,7 @@ static int	ctrl(char **stash, char **line, size_t i, char *tmp)
 	else
 		res = malloc(sl(*stash) + sl(tmp) + 1);
 	if (!res)
-		return (special_free(stash, 0), *line = NULL, 1);
+		return (special_free(stash, NULL, 0), *line = NULL, 1);
 	if (*stash)
 	{
 		while ((*stash)[++i])
@@ -68,7 +69,7 @@ static int	ctrl(char **stash, char **line, size_t i, char *tmp)
 			res[i++] = *tmp++;
 		res[i] = '\0';
 	}
-	special_free(stash, (i = 0));
+	special_free(stash, NULL, (i = 0));
 	*stash = res;
 	while ((*stash)[i] && (*stash)[i] != '\n')
 		i++;
@@ -80,26 +81,28 @@ static int	ctrl(char **stash, char **line, size_t i, char *tmp)
 char	*get_next_line(int fd)
 {
 	static char	*stash[10240];
-	char		buf[BUFFER_SIZE + 1];
+	char		*buf;
 	char		*line;
 	char		*tmp;
 	long		ret;
 
-	ret = BUFFER_SIZE;
+	buf = malloc((ret = BUFFER_SIZE) + 1);
+	if (!buf)
+		return (special_free(&stash[fd], NULL, 0));
 	while (ret > 0)
 	{
 		ret = read(fd, buf, BUFFER_SIZE);
 		if (ret == -1 || (ret == 0 && !stash[fd]))
-			return (special_free(&stash[fd], 0));
+			return (special_free(&stash[fd], buf, 0));
 		buf[ret] = '\0';
 		if (!ctrl(&stash[fd], &line, -1, buf))
 			continue ;
 		if (!line)
-			return (special_free(&stash[fd], 0));
+			return (special_free(&stash[fd], buf, 0));
 		tmp = NULL;
 		if (stash[fd][sl(line)])
 			tmp = ft_strdup(stash[fd] + sl(line), sl(stash[fd]) - sl(line));
-		return (special_free(&stash[fd], 0), stash[fd] = tmp, line);
+		return (special_free(&stash[fd], buf, 0), stash[fd] = tmp, line);
 	}
-	return (special_free(&stash[fd], 1));
+	return (special_free(&stash[fd], buf, 1));
 }

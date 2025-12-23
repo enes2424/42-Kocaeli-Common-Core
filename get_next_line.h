@@ -6,7 +6,7 @@
 /*   By: eates <eates@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:03:52 by eates             #+#    #+#             */
-/*   Updated: 2025/12/23 18:03:53 by eates            ###   ########.fr       */
+/*   Updated: 2025/12/23 18:36:07 by eates            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # elif BUFFER_SIZE <= 0
 #  undef BUFFER_SIZE
 #  define BUFFER_SIZE 16
-# elif BUFFER_SIZE > 5000000
+# elif BUFFER_SIZE > 268435407
 #  undef BUFFER_SIZE
-#  define BUFFER_SIZE 1000000
+#  define BUFFER_SIZE 268435407
 # endif
 
 char	*get_next_line(int fd);
