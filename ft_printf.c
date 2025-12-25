@@ -6,7 +6,7 @@
 /*   By: eates <eates@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:16:43 by eates             #+#    #+#             */
-/*   Updated: 2023/09/05 12:16:44 by eates            ###   ########.fr       */
+/*   Updated: 2025/12/25 14:08:01 by eates            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_printf(const char *s, ...)
 	va_list		args;
 	int			len;
 
-	if (LOCATION == 2 && !s)
+	if (!s)
 		return (-1);
 	len = 0;
 	va_start(args, s);

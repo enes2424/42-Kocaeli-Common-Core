@@ -6,7 +6,7 @@
 /*   By: eates <eates@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:16:20 by eates             #+#    #+#             */
-/*   Updated: 2023/09/05 12:16:23 by eates            ###   ########.fr       */
+/*   Updated: 2025/12/25 14:08:15 by eates            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	writepoint(void *ptr, int *len)
 	int					i;
 	unsigned long long	nb;
 
-	if (LOCATION == 2 && !ptr)
+	if (!ptr)
 		return (writestring("(nil)", len));
 	i = 0;
 	nb = (unsigned long long)ptr;
