@@ -24,13 +24,13 @@ Ana printf implementasyonu ve format işleyici.
 - **Desteklenen Formatlar:** `%c`, `%s`, `%d`, `%i`, `%u`, `%p`, `%x`, `%X`, `%%`
 - **Dönüş Değeri:** Yazdırılan karakter sayısı
 
-### writestring.c
-**Dosya:** `writestring.c`
+### write_string.c
+**Dosya:** `write_string.c`
 
 Karakter ve string yazdırma fonksiyonları.
 - **Fonksiyonlar:**
-  - `int writechar(char c, int *len)` - Tek karakter yazdırır
-  - `int writestring(char *s, int *len)` - String yazdırır
+  - `int write_char(char c, int *len)` - Tek karakter yazdırır
+  - `int write_string(char *s, int *len)` - String yazdırır
 - **Özellikler:**
   - NULL pointer güvenlik kontrolü
   - NULL string'ler için `(null)` yazdırır
@@ -41,10 +41,10 @@ Karakter ve string yazdırma fonksiyonları.
 
 Sayısal format specifier'ların implementasyonu.
 - **Fonksiyonlar:**
-  - `int writeint(int n, int *len)` - İşaretli tam sayı (%d, %i)
-  - `int writeuint(unsigned int n, int *len)` - İşaretsiz tam sayı (%u)
-  - `int writehex(unsigned int n, char c, int *len)` - Hexadecimal (%x, %X)
-  - `int writepoint(void *ptr, int *len)` - Pointer adresi (%p)
+  - `int write_int(int n, int *len)` - İşaretli tam sayı (%d, %i)
+  - `int write_uint(unsigned int n, int *len)` - İşaretsiz tam sayı (%u)
+  - `int write_hex(unsigned int n, char c, int *len)` - Hexadecimal (%x, %X)
+  - `int write_point(void *ptr, int *len)` - Pointer adresi (%p)
 - **Özel Durumlar:**
   - `INT_MIN` değeri için özel işlem (-2147483648)
   - NULL pointer için platform spesifik davranış
@@ -59,7 +59,7 @@ Sayısal format specifier'ların implementasyonu.
 
 Projeyi derlemek için build sistemi.
 - **Hedef:** `libftprintf.a` statik kütüphanesi
-- **Kaynak Dosyalar:** `ft_printf.c`, `writestring.c`, `writenumber.c`
+- **Kaynak Dosyalar:** `ft_printf.c`, `write_string.c`, `writenumber.c`
 - **Derleyici Bayrakları:** `-Wall -Wextra -Werror`
 - **Kurallar:** `all`, `clean`, `fclean`, `re`
 
@@ -159,10 +159,10 @@ gcc -Wall -Wextra -Werror main.c libftprintf.a -o program
 - **Statik buffer kullanımı:** Stack'te saklanan diziler
 - **Dinamik bellek tahsisi yok:** malloc/free kullanılmaz
 - **Buffer boyutları:**
-  - `writeint`: 10 karakter array
-  - `writeuint`: 16 karakter array (`unsigned int` için)
-  - `writehex`: 16 karakter array (`unsigned int` için)
-  - `writepoint`: 32 karakter array (`unsigned long long` için)
+  - `write_int`: 10 karakter array
+  - `write_uint`: 16 karakter array (`unsigned int` için)
+  - `write_hex`: 16 karakter array (`unsigned int` için)
+  - `write_point`: 32 karakter array (`unsigned long long` için)
 - **Buffer overflow koruması:** Sabit boyutlu array'ler ile
 
 ### Hata İşleme
@@ -209,7 +209,7 @@ ft_printf("User: %s, ID: %d, Status: %c, Address: %p\n",
 ft_printf("Dec: %d, Hex: %x, Ptr: %p\n", 42, 42, &main);
 
 // Edge case'ler
-ft_printf("NULL: %s, Zero: %d, Percent: %%\n", NULL, 0);
+ft_printf("NULL: %s, has_zero: %d, Percent: %%\n", NULL, 0);
 ```
 
 ## 🧪 Gelişmiş Test Senaryoları
@@ -373,33 +373,66 @@ ft_printf("%#x\n", 255);          // "0xff"
 ft_printf("%.2f\n", 3.14159);     // "3.14"
 ```
 
-## 📚 Referanslar ve Kaynaklar
+## 🎁 BONUS (Gelişmiş Özellikler)
 
-### Resmi Dökümanlar
-- [C Standard Library Reference](https://en.cppreference.com/w/c/io/fprintf)
-- [POSIX printf Specification](https://pubs.opengroup.org/onlinepubs/9699919799/functions/printf.html)
-- [GNU C Library Manual](https://www.gnu.org/software/libc/manual/html_node/Formatted-Output.html)
+Bu projede, standart `ft_printf` fonksiyonuna ek olarak **bonus** sürümü de bulunmaktadır. Bonus sürümünde aşağıdaki ek özellikler desteklenir:
 
-### Yararlı Linkler
-- [Variadic Functions in C](https://en.cppreference.com/w/c/variadic)
-- [Printf Format Strings](https://alvinalexander.com/programming/printf-format-cheat-sheet/)
-- [42 School Coding Standard](https://github.com/42School/norminette)
+- **Width (Genişlik):** `%10d`, `%5s` gibi genişlik belirteçleri ile çıktının minimum karakter uzunluğunu ayarlayabilirsiniz.
+- **Precision (Hassasiyet):** `%.3s`, `%.5d` gibi hassasiyet belirteçleri ile string veya sayıların kaç karakterinin/yeni basamağının yazdırılacağını kontrol edebilirsiniz.
+- **Flags (Bayraklar):**
+  - `-` : Sola yaslama
+  - `+` : Pozitif sayılar için artı işareti
+  - ` ` : Pozitif sayılar için boşluk
+  - `#` : Hex ve octal için ön ek (`0x`, `0X`, `0`)
+  - `0` : Sıfır ile doldurma
+- **Birlikte Kullanım:** Tüm bu özellikler kombinasyonlu olarak kullanılabilir: `%08x`, `%-10s`, `%#x`, `%+d`, `% 5d`, `%.3s` gibi.
+- **Bonus Dosyaları:** Tüm bonus kodları `bonus/` klasöründe yer alır.
+- **Bonus Derleme:** 
+  ```bash
+  make bonus
+  ```
+  komutu ile bonus özellikli kütüphane (`libftprintf.a`) oluşturulur.
 
-### Benzer Projekte Alternatifler
-- **snprintf**: Buffer-safe version
-- **dprintf**: File descriptor version
-- **asprintf**: Dynamic allocation version
+### Bonus Format Örnekleri
 
-## 👥 Katkıda Bulunanlar
+```c
+ft_printf("%08x\n", 42);        // "0000002a"
+ft_printf("%-10s!\n", "sol");   // "sol       !"
+ft_printf("%+d\n", 42);         // "+42"
+ft_printf("%#x\n", 255);        // "0xff"
+ft_printf("% 5d\n", 42);        // "   42"
+ft_printf("%.3s\n", "abcdef");  // "abc"
+ft_printf("%#08X\n", 42);       // "0X00002A"
+```
 
-Bu proje 42 Kocaeli öğrencisi **eates** tarafından geliştirilmiştir.
+### Bonus Dosya Yapısı
 
-**Geliştirme Süreci:**
-- Tarih: Eylül 2023
-- Platform: Linux/macOS
-- Norminette: v3.x uyumlu
-- Test Coverage: %100
+- `bonus/ft_printf_bonus.c` - Bonus printf ana fonksiyonu ve format işleyici
+- `bonus/ft_printf_bonus.h` - Bonus header ve flag/width/precision struct'ı
+- `bonus/write_char_bonus.c`, `bonus/write_string_bonus.c`, `bonus/write_int_bonus.c`, `bonus/write_uint_bonus.c`, `bonus/write_hex_bonus.c`, `bonus/write_pointer_bonus.c` - Bonus format yazıcılar
+- `bonus/utils_bonus.c` - Yardımcı fonksiyonlar
+
+### Bonus Kullanımı
+
+Projeyi bonus özelliklerle derlemek için:
+```bash
+make bonus
+```
+veya
+```bash
+make bonusre
+```
+
+Kendi kodunuzda:
+```c
+#include "ft_printf_bonus.h"
+ft_printf("%#08x\n", 42);
+```
+
+### Bonus Hakkında Ek Bilgiler
+- Bonus sürümünde, tüm flag ve genişlik/hassasiyet kombinasyonları Norminette kurallarına uygun şekilde ve buffer taşmalarına karşı korumalı olarak yazılmıştır.
+- Bonus kodları, ana kütüphaneden bağımsız olarak `make bonus` ile derlenir ve `libftprintf.a` dosyasına eklenir.
+- Bonus fonksiyonları, klasik printf ile aynı şekilde kullanılabilir. Sadece header dosyası olarak `ft_printf_bonus.h` eklemeniz yeterlidir.
+- Bonus testleri için, karmaşık format kombinasyonlarını ve edge-case'leri deneyebilirsiniz.
 
 ---
-
-*Bu README, ft_printf projesinin kapsamlı dokümantasyonudur. Proje hakkında sorularınız için 42 Kocaeli topluluğuna başvurabilirsiniz.*

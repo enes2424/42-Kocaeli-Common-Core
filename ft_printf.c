@@ -6,7 +6,7 @@
 /*   By: eates <eates@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:16:43 by eates             #+#    #+#             */
-/*   Updated: 2025/12/25 14:08:01 by eates            ###   ########.fr       */
+/*   Updated: 2025/12/31 13:34:38 by eates            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 static int	format(va_list *args, char c, int *len)
 {
 	if (c == 'c')
-		return (writechar(va_arg(*args, int), len));
+		return (write_char(va_arg(*args, int), len));
 	if (c == 's')
-		return (writestring(va_arg(*args, char *), len));
+		return (write_string(va_arg(*args, char *), len));
 	if (c == 'd' || c == 'i')
-		return (writeint(va_arg(*args, int), len));
+		return (write_int(va_arg(*args, int), len));
 	if (c == 'u')
-		return (writeuint(va_arg(*args, unsigned int), len));
+		return (write_uint(va_arg(*args, unsigned int), len));
 	if (c == 'p')
-		return (writepoint(va_arg(*args, void *), len));
+		return (write_point(va_arg(*args, void *), len));
 	if (c == 'x' || c == 'X')
-		return (writehex(va_arg(*args, unsigned int), c, len));
+		return (write_hex(va_arg(*args, unsigned int), c, len));
 	if (c == '%')
-		return (writechar('%', len));
+		return (write_char('%', len));
 	return (-1);
 }
 
@@ -47,7 +47,7 @@ int	ft_printf(const char *s, ...)
 			if (format(&args, *++s, &len) == -1)
 				return (va_end(args), -1);
 		}
-		else if (writechar(*s, &len) == -1)
+		else if (write_char(*s, &len) == -1)
 			return (va_end(args), -1);
 		s++;
 	}

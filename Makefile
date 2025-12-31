@@ -1,25 +1,40 @@
 NAME = libftprintf.a
 
 SRC =	ft_printf.c \
-		writestring.c \
-		writenumber.c
+		write_string.c \
+		write_number.c
+
+BSRC =	bonus/ft_printf_bonus.c \
+		bonus/utils_bonus.c \
+		bonus/write_char_bonus.c \
+		bonus/write_string_bonus.c \
+		bonus/write_pointer_bonus.c \
+		bonus/write_int_bonus.c \
+		bonus/write_uint_bonus.c \
+		bonus/write_hex_bonus.c
 
 OBJ = $(SRC:.c=.o)
+BOBJ = $(BSRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ) ft_printf.h
 	ar rc $(NAME) $(OBJ)
 
+bonus: $(BOBJ) bonus/ft_printf_bonus.h
+	ar rc $(NAME) $(BOBJ)
+
 %.o: %.c
-	cc -Wall -Wextra -Werror -c $< -o $@
+	cc -Wall -Wextra -Werror -fPIC -c $< -o $@
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(BOBJ)
 
 fclean : clean
 	rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+bonusre: fclean bonus
+
+.PHONY: all bonus clean fclean re bonusre
