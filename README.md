@@ -17,6 +17,7 @@
 | [so_long][so_long_tree]             | [![so_long_badge]][so_long_tree]             |
 | [philosophers][philosophers_tree]   | [![philosophers_badge]][philosophers_tree]   |
 | [minishell][minishell_tree]         | [![minishell_badge]][minishell_tree]         |
+| [cub3d][cub3d_tree]                 | [![cub3d_badge]][cub3d_tree]                 |
 | [irc][irc_tree]                     | [![irc_badge]][irc_tree]                     |
 | [inception][inception_tree]         | [![inception_badge]][inception_tree]         |
 | [cpp][cpp_tree]                     | [![cpp_badge]][cpp_tree]                     |
@@ -41,6 +42,8 @@
 [minishell_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20125%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
 [irc_tree]: https://github.com/enes2424/42-Kocaeli-Common-Core/tree/42-Kocaeli-Irc
 [irc_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20100%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
+[cub3d_tree]: https://github.com/enes2424/42-Kocaeli-Common-Core/tree/42-Kocaeli-Cub3d
+[cub3d_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20125%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
 [inception_tree]: https://github.com/enes2424/42-Kocaeli-Common-Core/tree/42-Kocaeli-Inception
 [inception_badge]: https://custom-icon-badges.demolab.com/badge/✔%EF%B8%8E%20100%20/%20100-02b331.svg?&style=for-the-badge&color=018f27
 [cpp_tree]: https://github.com/enes2424/42-Kocaeli-Cpp-Modules
