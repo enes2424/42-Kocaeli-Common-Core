@@ -212,5 +212,5 @@ THINKING → WAITING → TAKING_FORKS → EATING → SLEEPING → THINKING
 
 ## ⚠️ UYARI
 
-**ÖNEMLİ:** Bu proje 42 Kocaeli'nde tamamlanmıştır. Zamanında bazı kişisel kontrol standartlarına (null check, malloc hata kontrolü, fonksiyon return değeri kontrolü, vb.) dikkat edilmemiştir. Önceki projelerimi bu doğrultuda düzelterek GitHub'a yüklememe rağmen, bu projeyi orijinal haliyle yüklemek ve sonradan düzeltme yapmak için zaman harcamamak istedim. Proje mantıksal olarak doğru çalışmaktadır ve temel kavramları göstermektedir, ancak production-level hata kontrolü için bazı ek kontroller eklenmelidir.
+**ÖNEMLİ:** Bu proje 42 Kocaeli'nde tamamlanmış olup, **MacOS** üzerinde geliştirilmiştir. Zamanında bazı kişisel kontrol standartlarına (null check, malloc hata kontrolü, fonksiyon return değeri kontrolü, vb.) dikkat edilmemiştir. Önceki projelerimi bu doğrultuda düzelterek GitHub'a yüklememe rağmen, bu projeyi orijinal haliyle yüklemek ve sonradan düzeltme yapmak için zaman harcamamak istedim. Proje mantıksal olarak doğru çalışmaktadır ve temel kavramları göstermektedir, ancak production-level hata kontrolü için bazı ek kontroller eklenmelidir.
 
